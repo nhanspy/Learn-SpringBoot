@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design by VIET NHAN</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Tran Viet Nhan</h1>
+		<div style="width: 20%;background-color: aqua; display: inline-block;" >
+        <ul th:each="cate : ${listCates}" >
+                <li th:text="cate.namecate">  </li>
+            </ul>
+	  		
+        </div>
+        <div style="width: 79%;background-color: blueviolet;  display: inline-block;">
+            <ul>
+                <li> Item one </li>
+		 	     <li> Item two </li>
+		    </ul>
+        </div>
+		
+	</div>
+</body>
+</html>
