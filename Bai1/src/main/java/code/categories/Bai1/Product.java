@@ -1,6 +1,6 @@
 package code.categories.Bai1;
 
-import java.util.Locale.Category;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,16 +17,18 @@ public class Product {
 	private int quantity;
 	private float price;
 	private String description;
+	private int catID;
 	public Product() {
 		super();
 	}
-	public Product(int id, String name, int quantity, float price, String description) {
+	public Product(int id, String name, int quantity, float price, String description, int catID) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.quantity = quantity;
 		this.price = price;
 		this.description = description;
+		this.catID = catID;
 	}
 	
 	@Id
@@ -61,13 +63,22 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-//	@ManyToOne
+
+	public int getCatID() {
+		return catID;
+	}
+	public void setCatID(int catID) {
+		this.catID = catID;
+	}
+
+
+
+
+	//	@ManyToOne
 //	@JoinColumn(name = "CatID")
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "catID") 
-	private Categories category; 
-//	private int catid;
+	@JoinColumn(name = "catID")
+	private Categories category;
 	
 	
 	

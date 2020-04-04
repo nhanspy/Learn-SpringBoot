@@ -1,6 +1,6 @@
 package code.categories.Bai1;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
+@Entity(name = "categories")
 public class Categories {
 	private int ID;
 	private String name;
