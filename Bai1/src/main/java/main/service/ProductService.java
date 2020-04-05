@@ -1,10 +1,11 @@
-package code.categories.Bai1;
+package main.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import main.jpaRepository.ProductRepository;
+import main.model.Product;
 
 @Service
 public class ProductService {
@@ -15,8 +16,8 @@ public class ProductService {
 		return repo.findAll();
 	}
 	
-	public void save(Product product) {
-		repo.save(product);
+	public void save(Product productDTO) {
+		repo.save(productDTO);
 	}
 	
 	public Product get(Integer id) {
@@ -38,6 +39,10 @@ public class ProductService {
 		}
 		return listAfter;
 	}
+	
+//	public int countProductOfCate(int idCate) {
+//		
+//	}
 	
 	
 }

@@ -11,13 +11,13 @@
             <p th:each="cate:${listCates}" >
                 <a th:href="@{'/cate/' + ${cate.ID}}" ><span th:text="${cate.name}">hello</span></a>
             </p>
+            <!-- <p>Count: <span th:text="${counter}">Hello</span>></p> -->
         </div>
         <div style="width: 79%;  display: inline-block; margin-top: 0%;">
             
             <table cellpadding="10">
                 <thead>
                     <tr>
-                        <th>Product ID</th>
                         <th>Name</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -27,11 +27,11 @@
                 </thead>
                 <tbody>
                     <tr th:each="product : ${listProducts}">
-                        <td th:text="${product.id}">Product ID</td>
                         <td th:text="${product.name}">Name</td>
                         <td th:text="${product.quantity}">quantity</td>
                         <td th:text="${product.price}">price</td>
                         <td th:text="${product.description}">description</td>
+                        <td th:text="${product.catID}">CatID</td>
                         <td>
                             <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
                             &nbsp;&nbsp;&nbsp;
